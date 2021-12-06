@@ -1,0 +1,1 @@
+alert(Wowzer! tamagotchi  )
