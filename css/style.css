@@ -14,19 +14,19 @@ img {
 
 }
 .game{
-  margin-left: 350px;
-  margin-top::400px;
-  height: 380px;
-  width: 370px;
+  margin-left: 250px;
+  margin-top::auto;
+  height: 450;
+  width: 400px;
   border-radius: 50%;
   z-index: 1;
 }
 .character {
   height: 100px;
   width: 100px;
-  padding-top: 100px;
-  margin-left:500px;
-  margin-bottom::500px;
+  padding-top: 200px;
+  margin-left:450px;
+
   z-index: 2;
 }
 
@@ -41,7 +41,7 @@ img {
   right: 0;
   bottom: 0;
   background-color: rgba(0,0,0,0.5);
-  z-index: 3;
+  z-index: 4;
 
 }
 
@@ -70,9 +70,10 @@ img {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.buttons{
-float: right;
-padding: 50px;
-margins-top: 500px;
-margins-left: 100 ;
+#buttons{
+
+margin-left: 320px;
+position: absolute;
+z-index: 5;
+padding-top: 500px;
 }
