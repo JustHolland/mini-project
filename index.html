@@ -2,13 +2,45 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Dino Tamagotchi</title>
     <link rel="stylesheet" href="css/style.css">
+
   </head>
   <body>
-    <button type="button" name="button"
-    class="js-button">CLICK ME"</button>
-    <script type="text/javascript" src="js/app.js">
+    <header>
+
+      <h1>Welcome to Dino Tamagotchi World</h1>
+
+    </header>
+
+    <main>
+       <img class="game" src= "https://i.imgur.com/jbmIVFw.png" alt="">
+       <img class="character" src="https://i.imgur.com/ERe2kVL.png" alt="">
+
+       <div id="overlay" onclick="off()"></div>
+
+       <div>
+
+       <button type="button" id="button">Feed Me</button>
+       <button type="button" id="button">Exercise</button>
+       <button onclick="on()"id="button"> Put Dino to sleep</button>
+
+       </div>
+
+
+
+
+
+
+
+      </main>
+
+      <footer>
+      </footer>
+      <script type="text/javascript" src="js/app.js">
       </script>
+
+
+
   </body>
 </html>
