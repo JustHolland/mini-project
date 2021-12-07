@@ -1,8 +1,7 @@
 body{
-background-color: : green;
-
-display: block;
-margin: 50px;
+  background-color: #1ba300;
+background-image: url("https://www.transparenttextures.com/patterns/dark-leather.png");
+  margin: 50px;
 
 }
 
@@ -46,10 +45,13 @@ img {
 
 }
 
+#feeding:on {
 
 
+}
 
-.character:hover {
+/* make this an ann. for working exercice */
+.character:onclick {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
 
@@ -68,6 +70,9 @@ img {
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-#button{
-padding: 20px;
+.buttons{
+float: right;
+padding: 50px;
+margins-top: 500px;
+margins-left: 100 ;
 }
