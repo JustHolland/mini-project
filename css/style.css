@@ -9,12 +9,16 @@ h1{
 
   text-align: center;
 }
+
+
+
+
 img {
   position: absolute;
 
 }
 .game{
-  margin-left: 250px;
+  margin-left: 450px;
   margin-top::auto;
   height: 450;
   width: 400px;
@@ -25,11 +29,33 @@ img {
   height: 100px;
   width: 100px;
   padding-top: 200px;
-  margin-left:450px;
+  margin-left:600px;
 
   z-index: 2;
 }
 
+.name {
+  color: yellow;
+  font-size: 40px;
+
+}
+
+.age {
+  color: yellow;
+  font-size: 40px;
+
+}
+
+.hunger {
+  color: yellow;
+  font-size: 40px;
+
+}
+.bordem {
+  color: yellow;
+  font-size: 40px;
+
+}
 
 #overlay {
   position: fixed;
@@ -45,8 +71,10 @@ img {
 
 }
 
-#feeding:on {
-
+#feeding{
+background-image: image("img/food.png");
+animation: shake 0.5s;
+animation-iteration-count: 0.2s;
 
 }
 
@@ -71,8 +99,7 @@ img {
 }
 
 #buttons{
-
-margin-left: 320px;
+margin-left: 525px;
 position: absolute;
 z-index: 5;
 padding-top: 500px;
