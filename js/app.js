@@ -53,41 +53,47 @@ const game = {
   hunger: 0,
   bordem: 0,
   setAge(){
-    const intervalID = setInterval(() => {
-      const ageElement = document.querySelector('#age')
-      this.age++
-      ageElement.innerText = `Age: ${this.age}`
-    }, 60000)
+    if(this.age < 8){
+      const intervalID = setInterval(() => {
+        const ageElement = document.querySelector('#age')
+        this.age++
+        ageElement.innerText = `Age: ${this.age}`
+      }, 1000)
 
 
-    if (this.age === 2) {
-      alert("Dino trabsfirn !")
-      // add occupacy to dino pic
-    }
+        if(this.age === 2) {
+          alert("Dino trabsfirn !");
+        // add occupacy to dino pic
+        }
 
-
-    if (this.age> 6) {
-      clearInterval(intervalID)
-      document.querySelector('#start').disabled = false
+       if(this.age> 6) {
+        clearInterval(intervalID)
+        document.querySelector('#start').disabled = false
+      }
     }
   },
 
 
+
    dinobored() {
-     const intervalIDA = setInterval(() => {
-       const bordemElement = document.querySelector('#bordem')
-       bordemElement.innerText = `Bordem: ${this.bordem}`
-       this.bordem++
-     }, 2000)
+     if(this.bordem <10){
+       const intervalIDA = setInterval(() => {
+         const bordemElement = document.querySelector('#bordem')
+         bordemElement.innerText = `Bordem: ${this.bordem}`
+         this.bordem++
+       }, 2000)
+     }
    },
 
 
    dinoHunger() {
-     const intervalIDA = setInterval(() => {
-       const hungerElement = document.querySelector('#hunger')
-       hungerElement.innerText = `Hunger: ${this.hunger}`
-       this.hunger++
-     }, 2000)
+     if(this.hunger <10 ){
+       const intervalIDA = setInterval(() => {
+         const hungerElement = document.querySelector('#hunger')
+         hungerElement.innerText = `Hunger: ${this.hunger}`
+         this.hunger++
+       }, 2000)
+     }
    },
 
 
