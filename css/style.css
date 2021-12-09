@@ -45,47 +45,131 @@ img {
   width: 400px;
   border-radius: 50%;
   z-index: 1;
-  animation: shake 0.5s;
-  animation-iteration-count: 0.2s;
+  animation: shake 3s;
+  animation-iteration-count: 0.5s;
 }
 .character {
   height: 100px;
   width: 100px;
   padding-top: 200px;
   margin-left:600px;
-
   z-index: 2;
+  animation-duration: 10s;
+ animation-name: fadein;
 }
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/*
+.character{
+  width: 125px;
+  height: 125px;
+  border-radius: 0px;
+  animation: mymove 5s infinite;
+  animation-timing-function: linear;
+  animation: fadein 20s;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-direction: reverse;
+  }
+  .character{
+    font-weight: strong;
+    font-size: 30px;
+    animation-name: rotate;
+    animation-duration: 8s;
+    animation-direction: reverse;
+  } */
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #name {
   color: yellow;
   font-size: 40px;
-
 }
 
 #age {
   color: yellow;
   font-size: 40px;
-
 }
 
 #hunger {
   color: yellow;
   font-size: 40px;
-
 }
+
+#sleep {
+  color: yellow;
+  font-size: 40px;
+}
+
 #bordem {
   color: yellow;
   font-size: 40px;
-
 }
+
 
 #overlay {
   position: fixed;
   display: none;
   width: 100%;
   height: 100%;
-  top: 0;
+  top: 0#
   left: 0;
   right: 0;
   bottom: 0;
@@ -94,15 +178,26 @@ img {
 
 }
 
-#feeding{
-background-image: image("img/food.png");
+#foodhide{
+animation-name: rotate;
+animation-duration: 0.7s;
+animation-direction: reverse;
+}
 
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
 }
 
 /* make this an ann. for working exercice */
 .game:onclick {
-  animation: shake 0.5s;
+  animation: shake 5s;
   animation-iteration-count: infinite;
 
 }
@@ -125,4 +220,29 @@ margin-left: 525px;
 position: absolute;
 z-index: 5;
 padding-top: 500px;
+}
+.buttons{
+
+FONT: ICON;
+TEXT-ALIGN: CENTER;
+border-radius: 50%;
+MARGIN-LEFT: 550PX;
+MARGIN-TOP: 300PX;
+POSITION: FIXED;
+Z-INDEX: 9;
+}
+
+#sleepbtn{
+  HEIGHT: 50PX;
+  border-radius: 50%;
+}
+
+#feedbtn{
+  HEIGHT: 50PX;
+  border-radius: 50%;
+}
+
+#exercisebtn{
+  HEIGHT: 50PX;
+  border-radius: 50%;
 }

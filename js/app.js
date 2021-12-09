@@ -1,13 +1,15 @@
 class Dino {
-  constructor(hunger,sleep, exercise){
+  constructor(hunger,sleep,bordem){
+  this.age= 0
   this.hunger=hunger
   this.sleep = sleep
-  this.exercise = exercise
+  this.bordem = bordem
   }
 
   sayHello(){
-    console.log("Hello! I am a dino!")
+    console.log("Hello! I am a dino! And my hunger level is " + this.hunger)
   }
+
 }
 
 ////////game commands////////
@@ -34,6 +36,7 @@ function off() {
   console.log("off clicked")
   document.getElementById("overlay").style.display = "block";
   alert("Dino is going to sleep,  double click anywhere on the screen to turn the lights back on")
+
   //while loop function on is true increase sleep points xx per xx seconds
 }
 
@@ -49,72 +52,93 @@ function on() {
 
 
 const game = {
-  age: 0,
-  hunger: 0,
-  bordem: 0,
   setAge(){
-    if(this.age < 8){
+    if(newDino.age < 8){
       const intervalID = setInterval(() => {
         const ageElement = document.querySelector('#age')
-        this.age++
-        ageElement.innerText = `Age: ${this.age}`
+        newDino.age++
+        ageElement.innerText = `Age: ${newDino.age}`
+        if(newDino.age> 6) {
+         clearInterval(intervalID)
+         document.querySelector('#start').disabled = false
+       }
       }, 1000)
-
-
-        if(this.age === 2) {
-          alert("Dino trabsfirn !");
-        // add occupacy to dino pic
-        }
-
-       if(this.age> 6) {
-        clearInterval(intervalID)
-        document.querySelector('#start').disabled = false
-      }
     }
   },
 
 
+     dinoHunger() {
+       if(newDino.hunger <10 ){
+         const intervalIDB = setInterval(() => {
+           const hungerElement = document.querySelector('#hunger')
+           hungerElement.innerText = `Hunger: ${newDino.hunger}`
+           newDino.hunger++
+           if(newDino.hunger >10) {
+            clearInterval(intervalIDB)
+            alert("Your dino is dead!")
+          }
+         }, 2000)
+       }
+     },
 
-   dinobored() {
-     if(this.bordem <10){
+
+     dinoSleep() {
+       if(newDino.sleep <10 ){
+         const intervalIDc = setInterval(() => {
+           const sleepElement = document.querySelector('#sleep')
+           sleepElement.innerText = `Sleepiness: ${newDino.sleep}`
+           newDino.sleep++
+           if(newDino.sleep >10) {
+            clearInterval(intervalIDc)
+            alert("Your dino is dead!")
+          }
+        }, 9000)
+       }
+     },
+
+
+   dinoBored() {
+     if(newDino.bordem <10){
        const intervalIDA = setInterval(() => {
          const bordemElement = document.querySelector('#bordem')
-         bordemElement.innerText = `Bordem: ${this.bordem}`
-         this.bordem++
-       }, 2000)
+         bordemElement.innerText = `Bordem: ${newDino.bordem}`
+         newDino.bordem++
+         if(newDino.bordem  > 10) {
+        clearInterval(intervalIDA)
+        alert("Your dino is dead!")
+        }
+      }, 4000)
      }
    },
 
-
-   dinoHunger() {
-     if(this.hunger <10 ){
-       const intervalIDA = setInterval(() => {
-         const hungerElement = document.querySelector('#hunger')
-         hungerElement.innerText = `Hunger: ${this.hunger}`
-         this.hunger++
-       }, 2000)
-     }
-   },
 
 
    feedDino(){
     const hungerElement = document.querySelector('#hunger')
-     hungerElement.innerText = `Hunger: ${this.hunger}`
-     this.hunger--
+     hungerElement.innerText = `Hunger: ${newDino.hunger}`
+     newDino.hunger--
    },
 
+   sleepDino(){
+    const sleepElement = document.querySelector('#sleep')
+     sleepElement.innerText = `Sleepiness: ${newDino.sleep}`
+     newDino.sleep--
+   },
 
    exerciseDino(){
     const bordemElement = document.querySelector('#bordem')
-     bordemElement.innerText = `Bordem: ${this.bordem}`
-     this.bordem--
+     bordemElement.innerText = `Bordem: ${newDino.bordem}`
+     newDino.bordem--
    },
 
 
+
   startLife(){
-      this.setAge()
-      this.dinobored()
-      this.dinoHunger()
+      game.setAge()
+      game.dinoHunger()
+      game.dinoSleep()
+      game.dinoBored()
+
   },
 
 
@@ -140,6 +164,13 @@ feed.addEventListener('click', (event) => {
   game.feedDino()
 })
 
+const sleep = document.querySelector('#sleepbtn')
+  // console.log(life started)
+sleep.addEventListener('click', (event) => {
+  event.target.clicked = true
+  game.sleepDino()
+})
+
 
 const exercise = document.querySelector('#exercisebtn')
   // console.log(life started)
@@ -147,3 +178,44 @@ exercise.addEventListener('click', (event) => {
   event.target.clicked = true
   game.exerciseDino()
 })
+
+
+
+const feedO = document.querySelector('#feedbtn')
+
+feedO.addEventListener('click', disableFButtons);
+
+function disableFButtons() {
+  feedO.disabled = true;
+  feedO.value = "EATING...";
+  window.setTimeout(function() {
+    feedO.disabled = false;
+    feedO.value = "FEED";
+  }, 3000);
+}
+
+const sleepO = document.querySelector('#sleepbtn')
+
+sleepO.addEventListener('click', disableSButtons);
+
+function disableSButtons() {
+  sleepO.disabled = true;
+  sleepO.value = "SLEEPING...";
+  window.setTimeout(function() {
+    sleepO.disabled = false;
+    sleepO.value = "SLEEP";
+  }, 3000);
+}
+
+const exerciseO = document.querySelector('#exercisebtn')
+
+exerciseO.addEventListener('click', disableButtons);
+
+function disableButtons() {
+  exerciseO.disabled = true;
+  exerciseO.value = "PLAYING...";
+  window.setTimeout(function() {
+    exerciseO.disabled = false;
+    exerciseO.value = "PLAY";
+  }, 3000);
+}
