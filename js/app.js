@@ -70,7 +70,7 @@ const game = {
            document.getElementById("character").style.display = "none";
            document.getElementById("olddino").style.display = "block";
           }
-     }, 6000)
+     }, 10000)
     }
   },
 
@@ -86,7 +86,7 @@ const game = {
             alert("Your dino is dead!")
           }
 
-        }, 6000)
+        }, 4000)
        }
      },
 
@@ -101,7 +101,7 @@ const game = {
             clearInterval(intervalIDc)
             alert("Your dino is dead!")
           }
-        }, 9000)
+        }, 6000)
        }
      },
 
@@ -116,7 +116,7 @@ const game = {
         clearInterval(intervalIDA)
         alert("Your dino is dead!")
         }
-      }, 9000)
+      }, 6000)
      }
    },
 
