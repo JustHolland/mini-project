@@ -48,7 +48,7 @@ img {
   animation: shake 3s;
   animation-iteration-count: 0.5s;
 }
-.character {
+#character {
   height: 100px;
   width: 100px;
   padding-top: 200px;
@@ -106,7 +106,14 @@ img {
 
 
 
-
+#sleepdino{
+  display: none;
+  z-index: 20;
+  height: 100px;
+  margin-left: 550px;
+  margin-top: 225px;
+}
+}
 
 
 
@@ -173,6 +180,17 @@ img {
     display:none;
 
 }
+
+#bird{
+  margin-left: 500px;
+  margin-top: 100px;
+  animation-name: fadeOut;
+  animation-duration: 0.7s;
+  animation-direction: reverse;
+  z-index: 14;
+  height: 100px;
+  display:none;
+}
 @keyframes fadeOut {
    0% {opacity: 1;}
    100% {opacity: 0;}
@@ -238,4 +256,22 @@ Z-INDEX: 9;
 #exercisebtn{
   HEIGHT: 50PX;
   border-radius: 50%;
+}
+
+#fname{
+  WIDTH: 200PX;
+height: 50px;
+}
+
+#start{
+  height: 40px;
+}
+
+#olddino{
+  display: none;
+  height: 300px;
+  width: 300px;
+  padding-top: 100px;
+  margin-left:500px;
+  z-index: 2;
 }

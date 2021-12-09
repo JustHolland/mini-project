@@ -12,6 +12,7 @@ class Dino {
 
 }
 
+
 ////////game commands////////
 
 alert("Wowzer! A tomagotchi egg is hatching" );
@@ -55,16 +56,21 @@ function on() {
 
 const game = {
   setAge(){
-    if(newDino.age < 8){
+    if(newDino.age < 9){
       const intervalID = setInterval(() => {
         const ageElement = document.querySelector('#age')
         newDino.age++
         ageElement.innerText = `Age: ${newDino.age}`
-        if(newDino.age> 6) {
+        if(newDino.age> 9) {
          clearInterval(intervalID)
          document.querySelector('#start').disabled = false
        }
-      }, 1000)
+       if(newDino.age===8){
+         const bordemElement = document.querySelector('#olddino')
+           document.getElementById("character").style.display = "none";
+           document.getElementById("olddino").style.display = "block";
+          }
+     }, 6000)
     }
   },
 
@@ -79,7 +85,8 @@ const game = {
             clearInterval(intervalIDB)
             alert("Your dino is dead!")
           }
-         }, 2000)
+
+        }, 6000)
        }
      },
 
@@ -109,7 +116,7 @@ const game = {
         clearInterval(intervalIDA)
         alert("Your dino is dead!")
         }
-      }, 4000)
+      }, 9000)
      }
    },
 
@@ -132,6 +139,8 @@ const game = {
      bordemElement.innerText = `Bordem: ${newDino.bordem}`
      newDino.bordem--
    },
+
+
 
 
 
@@ -176,7 +185,15 @@ const sleep = document.querySelector('#sleepbtn')
 sleep.addEventListener('click', (event) => {
   event.target.clicked = true
   game.sleepDino()
+  document.getElementById("character").style.display = "none";
+   document.getElementById("olddino").style.display = "none";
+    document.getElementById("sleepdino").style.display = "block";
+ setTimeout(function(){
+  document.getElementById("character").style.display = "block";
+      document.getElementById("sleepdino").style.display = "none";
+ }, 2000);
 })
+
 
 
 const exercise = document.querySelector('#exercisebtn')
@@ -184,7 +201,12 @@ const exercise = document.querySelector('#exercisebtn')
 exercise.addEventListener('click', (event) => {
   event.target.clicked = true
   game.exerciseDino()
+  document.getElementById("bird").style.display = "block";
+ setTimeout(function(){
+    document.getElementById("bird").style.display = "none";
+ }, 3000);
 })
+
 
 
 
