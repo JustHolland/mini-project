@@ -179,9 +179,15 @@ img {
 }
 
 #foodhide{
-animation-name: rotate;
-animation-duration: 0.7s;
-animation-direction: reverse;
+    margin-left: 550px;
+    margin-top: 250px;
+    animation-name: rotate;
+    animation-duration: 0.7s;
+    animation-direction: reverse;
+    z-index: 14;
+    height: 30px;
+    display:none;
+
 }
 
 @keyframes rotate {

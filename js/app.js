@@ -16,7 +16,7 @@ class Dino {
 
 alert("Wowzer! A tomagotchi egg is hatching" );
 
-let namePrompt= alert(' A Dinosaur!', 'Name your Dinosaur to start begin');
+// let namePrompt= alert(' A Dinosaur!', 'Name your Dinosaur to start begin');
 
 const newDino = new Dino(0,0,0)
 
@@ -25,8 +25,10 @@ const newDino = new Dino(0,0,0)
 const sleepbtn = document.querySelector("#sleepbtn")
 sleepbtn.addEventListener("click", off);
 
+
 const body = document.querySelector("body")
 body.addEventListener("dblclick", on);
+
 
 
 
@@ -162,7 +164,12 @@ const feed = document.querySelector('#feedbtn')
 feed.addEventListener('click', (event) => {
   event.target.clicked = true
   game.feedDino()
+   document.getElementById("foodhide").style.display = "block";
+  setTimeout(function(){
+     document.getElementById("foodhide").style.display = "none";
+  }, 2000);
 })
+
 
 const sleep = document.querySelector('#sleepbtn')
   // console.log(life started)
