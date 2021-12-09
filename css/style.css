@@ -70,25 +70,9 @@ img {
   }
 }
 
-/*
-.character{
-  width: 125px;
-  height: 125px;
-  border-radius: 0px;
-  animation: mymove 5s infinite;
-  animation-timing-function: linear;
-  animation: fadein 20s;
-  animation-name: rotate;
-  animation-duration: 5s;
-  animation-direction: reverse;
-  }
-  .character{
-    font-weight: strong;
-    font-size: 30px;
-    animation-name: rotate;
-    animation-duration: 8s;
-    animation-direction: reverse;
-  } */
+
+
+
   @keyframes fadein {
     from {
       opacity: 0;
@@ -181,7 +165,7 @@ img {
 #foodhide{
     margin-left: 550px;
     margin-top: 250px;
-    animation-name: rotate;
+    animation-name: fadeOut;
     animation-duration: 0.7s;
     animation-direction: reverse;
     z-index: 14;
@@ -189,7 +173,10 @@ img {
     display:none;
 
 }
-
+@keyframes fadeOut {
+   0% {opacity: 1;}
+   100% {opacity: 0;}
+}
 @keyframes rotate {
   0% {
     transform: rotate(0);
