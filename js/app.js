@@ -17,7 +17,7 @@ class Dino {
 
 alert("Wowzer! A tomagotchi egg is hatching" );
 
-// let namePrompt= alert(' A Dinosaur!', 'Name your Dinosaur to start begin');
+
 
 const newDino = new Dino(0,0,0)
 
@@ -40,7 +40,7 @@ function off() {
   document.getElementById("overlay").style.display = "block";
   alert("Dino is going to sleep,  double click anywhere on the screen to turn the lights back on")
 
-  //while loop function on is true increase sleep points xx per xx seconds
+
 }
 
 
